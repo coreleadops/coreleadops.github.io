@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heartbeat Control Alternative (2026) — Heartbeat Manager by Core Lead Ops</title>
+<meta name="description" content="Heartbeat Control hasn't been updated since August 2023 and WordPress.org flags it as possibly unmaintained. Heartbeat Manager is the actively maintained replacement — same controls, current PHP, automatic settings migration.">
+<link rel="canonical" href="https://coreleadops.github.io/heartbeat-control-alternative.html">
+<meta property="og:title" content="Heartbeat Control Alternative — Heartbeat Manager">
+<meta property="og:description" content="The maintained replacement for Heartbeat Control: current WordPress and PHP, answered support, automatic migration.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://coreleadops.github.io/heartbeat-control-alternative.html">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Heartbeat Manager",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "WordPress",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "Core Lead Ops", "url": "https://coreleadops.github.io/" }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Core Lead Ops<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="heartbeat-control-alternative.html">Heartbeat Control alternative</a>
+      <a href="q2w3-fixed-widget-alternative.html">Q2W3 Fixed Widget alternative</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Heartbeat Control is <span class="accent">no longer maintained</span>. Here's the replacement.</h1>
+    <p class="lede">Heartbeat Manager gives you the same Heartbeat API controls — dashboard, editor, frontend — rebuilt for current WordPress and PHP, with your old settings imported automatically.</p>
+    <a class="cta" href="mailto:thomas@coreleadops.com?subject=Notify%20me%20when%20Heartbeat%20Manager%20launches">Notify me at launch</a>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <h2>What happened to Heartbeat Control?</h2>
+    <p><a href="https://wordpress.org/plugins/heartbeat-control/">Heartbeat Control</a> by WP Media was a popular utility — 80,000+ active installations — for controlling the WordPress Heartbeat API. Then development stopped. Here is the publicly observable record:</p>
+
+    <div class="evidence">
+      <p><strong>No update in over three years.</strong> The last release was version 2.0.1 on <strong>August 31, 2023</strong>. It is listed as tested only up to WordPress 6.3.</p>
+      <p><strong>WordPress.org itself flags it.</strong> The plugin page displays the official warning: <em>"This plugin hasn't been tested with the latest 3 major releases of WordPress. It may no longer be maintained or supported and may have compatibility issues when used with more recent versions of WordPress."</em></p>
+      <p><strong>~127 unresolved support threads.</strong> Zero threads resolved in the last two months. Threads titled <em>"DEAD PLUGIN"</em> (March 2024), <em>"Plugin Flagged Abandoned"</em> (September 2025), and multiple <em>"Is this plugin abandoned?"</em> threads have no author response.</p>
+      <p><strong>Users report fatal errors on PHP 8.1 and 8.2.</strong> A support thread documents an <em>Uncaught TypeError</em> (<code>class "CMB2_Hookup" not found</code>) on currently supported PHP versions. We have not independently reproduced this failure, so we report it as users describe it — but the thread has sat unanswered since March 2024, and the plugin still bundles CMB2 v2.10.1 from 2021.</p>
+      <p><strong>The most recent thread</strong> (September 23, 2026) is an automated version-compatibility review notice: the plugin "encountered an issue and requires review." It remains unresolved.</p>
+    </div>
+
+    <p>If you run Heartbeat Control, nothing about this is your fault — it was a good plugin. But every month it goes without maintenance, the gap between it and current WordPress/PHP grows. That's why we built the replacement.</p>
+    <p class="evidence-date">Evidence last verified: September 28, 2026, from the public WordPress.org plugin page and support forum.</p>
+  </div>
+</section>
+
+<section class="block soft">
+  <div class="wrap">
+    <h2>Heartbeat Control vs. Heartbeat Manager</h2>
+    <table class="compare">
+      <tr><th></th><th>Heartbeat Control</th><th>Heartbeat Manager</th></tr>
+      <tr><td>Last update</td><td>August 2023 (3+ years ago)</td><td>Actively maintained</td></tr>
+      <tr><td>PHP support</td><td>Users report fatal errors on PHP 8.1/8.2</td><td>Built for PHP 7.4–8.x</td></tr>
+      <tr><td>WordPress compatibility</td><td>Tested only to WP 6.3; official "may be unmaintained" warning</td><td>Tested against current releases</td></tr>
+      <tr><td>Heartbeat controls</td><td>Dashboard / editor / frontend, allow · disable · modify frequency</td><td>Same three locations, same three modes</td></tr>
+      <tr><td>Dependencies</td><td>Bundles CMB2 v2.10.1 (2021)</td><td>No heavy framework dependencies</td></tr>
+      <tr><td>Support</td><td>~127 unresolved threads</td><td>Answered by Core Lead Ops</td></tr>
+      <tr><td>Your settings</td><td>—</td><td>Imported automatically on activation</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Migration: deactivate the old, activate the new</h2>
+    <ol class="steps">
+      <li><strong>Install Heartbeat Manager</strong> from the WordPress plugin directory (launching soon — <a href="mailto:thomas@coreleadops.com?subject=Notify%20me%20when%20Heartbeat%20Manager%20launches">get notified</a>).</li>
+      <li><strong>Activate it.</strong> On first run it detects Heartbeat Control's settings and imports them — you'll see a confirmation notice on the settings page. Nothing to reconfigure.</li>
+      <li><strong>Deactivate Heartbeat Control.</strong> Running both is unnecessary; Heartbeat Manager now owns the heartbeat settings.</li>
+    </ol>
+    <p class="muted">Technical note: migration reads the legacy <code>heartbeat_control_settings</code> option and writes it to the new <code>heartbeat_manager_settings</code> format. Your old settings are left untouched until you remove the old plugin.</p>
+  </div>
+</section>
+
+<section class="block soft">
+  <div class="wrap">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is Heartbeat Control actually abandoned?</summary>
+        <p>We can't speak for its author. What we can document: no release since August 2023, a WordPress.org "may no longer be maintained" warning, ~127 unresolved support threads, and unanswered breakage reports. Draw your own conclusions — that's why we cite dates and links.</p>
+      </details>
+      <details>
+        <summary>Will my Heartbeat Control settings carry over?</summary>
+        <p>Yes. Heartbeat Manager detects the old plugin's settings on activation and imports them automatically, with a confirmation notice on the settings page.</p>
+      </details>
+      <details>
+        <summary>Will disabling the heartbeat break autosave?</summary>
+        <p>Disabling the heartbeat in the post editor location stops post autosaves and post-locking warnings. If you rely on autosave, use "Modify frequency" (e.g. 120 seconds) for the editor instead of "Disable".</p>
+      </details>
+      <details>
+        <summary>Does it work with page builders and WooCommerce?</summary>
+        <p>Yes. Heartbeat Manager only touches the core <code>heartbeat</code> script handle and the <code>heartbeat_settings</code> filter — it doesn't modify any other plugin's behavior.</p>
+      </details>
+      <details>
+        <summary>Is it really free?</summary>
+        <p>Yes. Everything Heartbeat Control did is free in Heartbeat Manager. A future Pro tier will add new capabilities only — nothing the old plugin did for free will ever be paywalled.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">Core Lead Ops LLC</strong><br>
+      Maintained replacements for abandoned WordPress utilities.
+    </div>
+    <div>
+      <a href="index.html">Home</a><br>
+      <a href="q2w3-fixed-widget-alternative.html">Q2W3 Fixed Widget alternative</a>
+    </div>
+    <p class="fine">WordPress is a registered trademark of the WordPress Foundation. Heartbeat Control is a plugin by WP Media; this page documents its publicly observable maintenance status and is not affiliated with WP Media. All breakage claims are phrased as user reports unless otherwise noted.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q2W3 Fixed Widget Alternative (2026) — Sticky Widget Manager by Core Lead Ops</title>
+<meta name="description" content="Q2W3 Fixed Widget hasn't been updated since March 2023, and users report it broken on Safari, mobile, and HTML blocks. Sticky Widget Manager is the maintained replacement — jQuery-free, per-widget control, automatic migration.">
+<link rel="canonical" href="https://coreleadops.github.io/q2w3-fixed-widget-alternative.html">
+<meta property="og:title" content="Q2W3 Fixed Widget Alternative — Sticky Widget Manager">
+<meta property="og:description" content="The maintained replacement for Q2W3 Fixed Widget: jQuery-free sticky engine, per-widget control, footer stopper, automatic migration.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://coreleadops.github.io/q2w3-fixed-widget-alternative.html">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Sticky Widget Manager",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "WordPress",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "Core Lead Ops", "url": "https://coreleadops.github.io/" }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Core Lead Ops<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="heartbeat-control-alternative.html">Heartbeat Control alternative</a>
+      <a href="q2w3-fixed-widget-alternative.html">Q2W3 Fixed Widget alternative</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Q2W3 Fixed Widget is <span class="accent">no longer maintained</span>. Here's the replacement.</h1>
+    <p class="lede">Sticky Widget Manager makes any sidebar widget stick on scroll — jQuery-free, per-widget control, footer stopper — and imports your Q2W3 setup automatically.</p>
+    <a class="cta" href="mailto:thomas@coreleadops.com?subject=Notify%20me%20when%20Sticky%20Widget%20Manager%20launches">Notify me at launch</a>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <h2>What happened to Q2W3 Fixed Widget?</h2>
+    <p><a href="https://wordpress.org/plugins/q2w3-fixed-widget/">Fixed Widget and Sticky Elements for WordPress</a> (Q2W3) was the go-to plugin for sticky sidebar widgets — 70,000+ active installations and a 4.7-star rating from 262 reviews. Then development stopped. The publicly observable record:</p>
+
+    <div class="evidence">
+      <p><strong>No update since March 30, 2023.</strong> Listed as tested only up to WordPress 6.2.</p>
+      <p><strong>Support forum gone quiet.</strong> The author (monetizemore) no longer responds. An unanswered thread from April 2025 asks outright: <em>"still maintained or abandoned?"</em></p>
+      <p><strong>Users report it breaking in modern browsers.</strong> Unanswered threads include <em>"Not working on Safari"</em> (August 2024), <em>"not working in mobile view"</em> (September 2023), and <em>"not working for HTML block"</em> (May 2023). We have not independently reproduced these failures, so we report them as users describe them.</p>
+    </div>
+
+    <p>Sticky widgets are one of those features that either work invisibly or fail embarrassingly — a signup form overlapping your footer, a widget that jumps on mobile. A plugin with no maintainer can't keep up with browser and WordPress changes. That's why we rebuilt it.</p>
+    <p class="evidence-date">Evidence last verified: September 28, 2026, from the public WordPress.org plugin page and support forum.</p>
+  </div>
+</section>
+
+<section class="block soft">
+  <div class="wrap">
+    <h2>Q2W3 Fixed Widget vs. Sticky Widget Manager</h2>
+    <table class="compare">
+      <tr><th></th><th>Q2W3 Fixed Widget</th><th>Sticky Widget Manager</th></tr>
+      <tr><td>Last update</td><td>March 2023</td><td>Actively maintained</td></tr>
+      <tr><td>JavaScript engine</td><td>jQuery-based</td><td>jQuery-free vanilla JS, IntersectionObserver-driven</td></tr>
+      <tr><td>Safari / mobile / HTML blocks</td><td>Users report breakage, unanswered</td><td>Modern engine; responsive disable below a viewport width</td></tr>
+      <tr><td>Per-widget control</td><td>Yes</td><td>Yes — checkbox list grouped by sidebar</td></tr>
+      <tr><td>Footer handling</td><td>Margins / stopper options</td><td>Stopper selector + bottom margin; stuck widgets park above the footer</td></tr>
+      <tr><td>Block widgets editor</td><td>Users report HTML-block issues</td><td>Settings-page picker works with block and classic editors</td></tr>
+      <tr><td>Custom sticky elements</td><td>Widgets only</td><td>Any element via CSS selector</td></tr>
+      <tr><td>Your setup</td><td>—</td><td>Imported automatically on activation</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Migration: your setup comes with you</h2>
+    <ol class="steps">
+      <li><strong>Install Sticky Widget Manager</strong> from the WordPress plugin directory (launching soon — <a href="mailto:thomas@coreleadops.com?subject=Notify%20me%20when%20Sticky%20Widget%20Manager%20launches">get notified</a>).</li>
+      <li><strong>Activate it.</strong> It detects Q2W3 Fixed Widget's settings (margins, stopper, disable width) and which widgets you marked as fixed, and imports them — with a confirmation notice on the settings page.</li>
+      <li><strong>Deactivate Q2W3 Fixed Widget.</strong> Running two sticky engines on the same widgets makes them jump; the settings page warns you if the old plugin is still active.</li>
+    </ol>
+    <p class="muted">Honest caveat: per-widget migration is best-effort — it depends on how your widgets were registered. If a widget doesn't come over, just re-tick it in the list. Global settings (margins, stopper, disable width) migrate reliably.</p>
+  </div>
+</section>
+
+<section class="block soft">
+  <div class="wrap">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is Q2W3 Fixed Widget actually abandoned?</summary>
+        <p>We can't speak for its author. What we can document: no release since March 2023, tested only to WordPress 6.2, a dead support forum, and an unanswered "still maintained or abandoned?" thread from April 2025.</p>
+      </details>
+      <details>
+        <summary>Will my Q2W3 setup carry over?</summary>
+        <p>Your global settings (margins, stopper, disable width) and which widgets were marked as fixed are imported automatically on activation. If a widget doesn't come over, re-tick it in the settings list.</p>
+      </details>
+      <details>
+        <summary>Does it need jQuery?</summary>
+        <p>No. Sticky Widget Manager uses vanilla JavaScript with IntersectionObserver — no jQuery dependency at all.</p>
+      </details>
+      <details>
+        <summary>My sticky widget overlaps the footer. How do I fix it?</summary>
+        <p>Set a <strong>Stopper element</strong> (e.g. <code>#footer</code> or <code>.site-footer</code>) and a <strong>Bottom margin</strong>. Stuck widgets park above the stopper instead of sliding over it.</p>
+      </details>
+      <details>
+        <summary>Can I disable sticky on mobile?</summary>
+        <p>Yes — the <strong>Disable below width</strong> setting turns sticky off below a viewport width you choose. Set it to <code>0</code> to keep sticky enabled on all screen sizes.</p>
+      </details>
+      <details>
+        <summary>Is it really free?</summary>
+        <p>Yes. Everything Q2W3 Fixed Widget did is free in Sticky Widget Manager. A future Pro tier will add new capabilities only — nothing the old plugin did for free will ever be paywalled.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">Core Lead Ops LLC</strong><br>
+      Maintained replacements for abandoned WordPress utilities.
+    </div>
+    <div>
+      <a href="index.html">Home</a><br>
+      <a href="heartbeat-control-alternative.html">Heartbeat Control alternative</a>
+    </div>
+    <p class="fine">WordPress is a registered trademark of the WordPress Foundation. Q2W3 Fixed Widget is a plugin by monetizemore; this page documents its publicly observable maintenance status and is not affiliated with monetizemore. All breakage claims are phrased as user reports unless otherwise noted.</p>
+  </div>
+</footer>
+
+</body>
+</html>
